@@ -38,8 +38,15 @@ public class Movement : MonoBehaviour
         transform.position += new Vector3(x, 0, z).normalized*speed*Time.deltaTime;
 
 
+        
 
 
-
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("emeny"))
+        {
+            print("game over");
+        }
     }
 }
